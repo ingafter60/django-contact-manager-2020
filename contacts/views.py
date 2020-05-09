@@ -4,5 +4,8 @@ from django.shortcuts import render
 def home(request):
 	return render(request, 'index.html')
 
-def aboutPage(request):
-	return render(request, 'about.html')
+def detail(request):
+	return render(request, 'detail.html')
+
+def search(request):
+	return render(request, 'search.html')
