@@ -5,7 +5,7 @@ from .models import Contact
 
 # Customizing Contacts table
 class ContactAdmin(admin.ModelAdmin):
-	list_display  = ('name', 'gender', 'email', 'info', 'phone', 'date_added')
+	list_display  = ('id', 'name', 'gender', 'email', 'info', 'phone', 'date_added')
 	list_editable = ('info', 'phone',)
 	list_per_page = 1
 	search_fields = ('name', 'gender', 'email', 'info', 'phone')
