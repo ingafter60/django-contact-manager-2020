@@ -20,3 +20,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('contacts.urls')),
 ]
+
+
+# Customizing admin area
+
+## Change title from 'Django administration' to 'CM Administration'
+admin.site.site_header = 'CM Administration'	
+
+## Change sub-title from 'Site administration' to 'Welcome to project'
+admin.site.index_title = 'Welcome to project'
+
+## Change browser title from 'Welcome to project | Django site' to 'Welcome to project | Control Panel'
+admin.site.site_title = 'Control Panel'
