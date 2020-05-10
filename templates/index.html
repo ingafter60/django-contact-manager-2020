@@ -17,7 +17,7 @@
           <!-- Boy Card -->
           {% if contact.gender == 'male' %}
             <div class="card my-2 mx-2 boy-card">
-              <img 
+              <img style="border-radius: 50%; margin: 10px auto; width:150px; height: 150px !important;" 
                 src="{% if contact.image %}
                 {{contact.image.url}}
                 {% else %}
@@ -44,7 +44,7 @@
           <!-- Girl Card -->
           {% elif contact.gender == 'female' %}
             <div class="card my-2 mx-2 boy-card">
-              <img 
+              <img style="border-radius: 50%; margin: 10px auto; width:150px; height: 150px !important;" 
                 src="{% if contact.image %}
                 {{contact.image.url}}
                 {% else %}
@@ -71,7 +71,7 @@
           <!-- Other Card -->
           {% else %}
             <div class="card my-2 mx-2 boy-card">
-              <img 
+              <img style="border-radius: 50%; margin: 10px auto; width:150px; height: 150px !important;" 
                 src="{% if contact.image %}
                 {{contact.image.url}}
                 {% else %}
