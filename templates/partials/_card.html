@@ -1,0 +1,86 @@
+{% load static %}
+
+          <!-- Start if, elif, and else -->
+          <!-- Boy Card -->
+          {% if contact.gender == 'male' %}
+            <div class="card my-2 mx-2 boy-card">
+              <img style="border-radius: 50%; margin: 10px auto; width:150px; height: 150px !important;" 
+                src="{% if contact.image %}
+                {{contact.image.url}}
+                {% else %}
+                {% static 'images/boy.png' %}        
+                {% endif %}" class="img-fluid" />
+              <div class="card-header">
+                <a href="detail.html" class="text-white header-link"
+                  ><i class="fas fa-mars mr-2"></i>{{contact.name}}</a
+                >
+              </div>
+              <div class="card-body pb-0">
+                <p>
+                  <i class="fas fa-at mr-2"></i>
+                  <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+                </p>
+                <p>
+                  <i class="fas fa-phone mr-2"></i>
+                  <a href="tel:{{contact.phone}}">{{contact.phone}}</a>
+                </p>
+                <p><i class="fas fa-info-circle mr-2"></i>{{contact.info}}</p>
+              </div>
+            </div>
+
+          <!-- Girl Card -->
+          {% elif contact.gender == 'female' %}
+            <div class="card my-2 mx-2 boy-card">
+              <img style="border-radius: 50%; margin: 10px auto; width:150px; height: 150px !important;" 
+                src="{% if contact.image %}
+                {{contact.image.url}}
+                {% else %}
+                {% static 'images/girl.png' %}    
+                {% endif %}" class="img-fluid" />
+              <div class="card-header">
+                <a href="detail.html" class="text-white header-link"
+                  ><i class="fas fa-venus mr-2"></i>{{contact.name}}</a
+                >
+              </div>
+              <div class="card-body pb-0">
+                <p>
+                  <i class="fas fa-at mr-2"></i>
+                  <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+                </p>
+                <p>
+                  <i class="fas fa-phone mr-2"></i>
+                  <a href="tel:{{contact.phone}}">{{contact.phone}}</a>
+                </p>
+                <p><i class="fas fa-info-circle mr-2"></i>{{contact.info}}</p>
+              </div>
+            </div>
+
+          <!-- Other Card -->
+          {% else %}
+            <div class="card my-2 mx-2 boy-card">
+              <img style="border-radius: 50%; margin: 10px auto; width:150px; height: 150px !important;" 
+                src="{% if contact.image %}
+                {{contact.image.url}}
+                {% else %}
+                {% static 'images/other.png' %}    
+                {% endif %}" class="img-fluid" />
+              <div class="card-header">
+                <a href="detail.html" class="text-white header-link"
+                  ><i class="fas fa-genderless mr-2"></i>{{contact.name}}</a
+                >
+              </div>
+              <div class="card-body pb-0">
+                <p>
+                  <i class="fas fa-at mr-2"></i>
+                  <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+                </p>
+                <p>
+                  <i class="fas fa-phone mr-2"></i>
+                  <a href="tel:{{contact.phone}}">{{contact.phone}}</a>
+                </p>
+                <p><i class="fas fa-info-circle mr-2"></i>{{contact.info}}</p>
+              </div>
+            </div>        
+          
+          {% endif %}
+          <!-- End if, elif, and else -->
