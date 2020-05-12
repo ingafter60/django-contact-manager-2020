@@ -13,15 +13,15 @@ Search Results for {{search_term}}
 
   <div class="container main-part">
     <!-- Card for details -->
-          {% if contacts %}
+      {% if contacts %}
         {% for contact in contacts %}
           
-        {% include 'partials/_card.html' %}
+          {% include 'partials/_card.html' %}
 
         {% endfor %}<!-- endfor of forloop of for contact -->
 
       {% else %}<!-- else of if contact -->
-      <p class="d-block font-weight-light my-2 heading">No searh results!</p>    
+        <p class="d-block font-weight-light my-2 heading">No searh results!</p>    
       {% endif %}<!-- endif of if contact -->
   </div>
   <!-- Main Section ends-->

@@ -7,7 +7,7 @@ class Contact(models.Model):
 	email		= models.CharField(max_length=100)
 	phone		= models.IntegerField()
 	info		= models.CharField(max_length=30)
-	gender		= models.CharField(max_length=30, choices=(
+	gender	= models.CharField(max_length=30, choices=(
 							('male', 'Male'),
 							('female', 'Female'),
 							('other', 'Other')))
