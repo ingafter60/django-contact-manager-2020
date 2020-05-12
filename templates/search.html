@@ -13,46 +13,16 @@ Search Results for {{search_term}}
 
   <div class="container main-part">
     <!-- Card for details -->
-    <div class="card my-2 mx-2 boy-card">
-      <img src="{% static 'images/girl.png' %}" class="img-fluid" />
-      <div class="card-header">
-        <a href="detail.html" class="text-white header-link"
-          ><i class="fas fa-mars mr-2"></i> John Wood</a
-        >
-      </div>
-      <div class="card-body pb-0">
-        <p>
-          <i class="fas fa-at mr-2"></i>
-          <a href="mailto:samirphuyal65@gmail.com">johnwood@gmail.com</a>
-        </p>
-        <p>
-          <i class="fas fa-phone mr-2"></i>
-          <a href="tel:9001010100">9001010100</a>
-        </p>
-        <p><i class="fas fa-info-circle mr-2"></i> Friend</p>
-      </div>
-    </div>
-    <!-- Card for details ends -->
+          {% if contacts %}
+        {% for contact in contacts %}
+          
+        {% include 'partials/_card.html' %}
 
-    <div class="card my-2 mx-2 girl-card">
-      <img src="{% static 'images/boy.png' %}" class="img-fluid" />
-      <div class="card-header">
-        <a href="detail.html" class="text-white header-link"
-          ><i class="fas fa-venus mr-2"></i> June Pink</a
-        >
-      </div>
-      <div class="card-body pb-0">
-        <p>
-          <i class="fas fa-at mr-2"></i>
-          <a href="mailto:pinkjune@gmail.com">pinkjune@gmail.com</a>
-        </p>
-        <p>
-          <i class="fas fa-phone mr-2"></i>
-          <a href="tel:9819090909">9819090909</a>
-        </p>
-        <p><i class="fas fa-info-circle mr-2"></i> Friend</p>
-      </div>
-    </div>
+        {% endfor %}<!-- endfor of forloop of for contact -->
+
+      {% else %}<!-- else of if contact -->
+      <p class="d-block font-weight-light my-2 heading">No searh results!</p>    
+      {% endif %}<!-- endif of if contact -->
   </div>
   <!-- Main Section ends-->
 {% endblock content %} 
