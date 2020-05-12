@@ -35,11 +35,12 @@
       <a style="color: #053636;" class="logo" href="{% url 'home' %}">
         <i class="fas fa-user-circle"></i>&nbsp;Contact Manager
       </a>
-      <form class="form-inline my-2" action="{% url 'search' %}">
+      <form class="form-inline my-2" action="{% url 'search' %}" method="GET">
         <input
           class="form-control"
           type="text"
           placeholder="Find contacts..."
+          name="search_term"
         />
         <button class="btn" type="submit"><i class="fas fa-search"></i></button>
       </form>

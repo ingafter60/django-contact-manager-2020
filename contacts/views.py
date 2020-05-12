@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
 from .models import Contact
 
@@ -28,5 +28,11 @@ class ContactDetailView(DetailView):
 	context_object_name = 'contact'
 
 def search(request):
-	context = {}
-	return render(request, 'search.html', context)	
+	if request.GET:
+		search_term = request.GET['search_term']
+		context = {
+			'search_term': search_term
+		}
+		return render(request, 'search.html', context)	
+	else:
+		return redirect('home')	
