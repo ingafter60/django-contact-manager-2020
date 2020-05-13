@@ -33,7 +33,7 @@ nav {
   color: white;
   text-decoration: none;
 }
-form {
+/*form {
   position: relative;
 }
 button {
@@ -44,9 +44,9 @@ button {
 }
 button i {
   color: var(--back);
-}
+}*/
 
-input {
+.search-box {
   border-radius: 0px !important;
   width: 250px;
   border: none !important;
@@ -126,6 +126,12 @@ footer {
   .logo {
     font-size: 22px !important;
   }
+
+  .feature-link {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+
   /* navbar style ends */
 
   /* card styles */
@@ -152,3 +158,7 @@ footer {
 /* Media Queries Ends*/
 
 /*new image*/
+
+.card {
+ background: #E0E0E0;
+}

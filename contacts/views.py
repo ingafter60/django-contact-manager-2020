@@ -36,6 +36,7 @@ def search(request):
 			Q(email__icontains=search_term) |
 			Q(info__icontains=search_term) |
 			Q(gender__iexact=search_term) |
+			Q(date_added__icontains=search_term) |
 			Q(phone__iexact=search_term) 
 		)
 		context = {
