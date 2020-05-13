@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
 from .models import Contact
 from django.db.models import Q
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 # def home(request):
@@ -46,3 +47,13 @@ def search(request):
 		return render(request, 'search.html', context)	
 	else:
 		return redirect('home')	
+
+class ContactCreateView(CreateView):
+	# use Contact model and store its value in 'model'
+	model = Contact 
+	# template name to render the form to create contact object
+	template_name = 'create.html'
+	# fields to display in the template from the Contact model / table
+	fields = ['name', 'email', 'phone', 'info', 'gender', 'image']
+	# where to go (go to home page) when object is successfully created
+	success_url = '/'
