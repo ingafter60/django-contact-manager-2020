@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block title %}
-Update {{contact}}   
+Delete {{contact}}   
 {% endblock title %}
 
 {% block content %}
 <div class="container">
 	<h2 class="heading font-weight-light text-center">
-		Update {{contact}}
+		Delete {{contact}}
 	</h2>
 	<hr>
 </div>
@@ -15,13 +15,9 @@ Update {{contact}}
 	<form action="" method="POST" enctype="multipart/form-data">
 	{% csrf_token %}
 	{{form|crispy}}
-	<input type="submit" value="Update" class="w-100 text-white text-center my-2 btn btn-info" >
+	<input type="submit" value="Delete" class="w-100 text-white text-center my-2 btn btn-danger" >
 	</form>
-	<div class="container main-part">
-  		<p>
-  			<a class="btn btn-primary" href="{% url 'home' %}">Back &larr;</a>
-  		</p>  
-  	</div>
 </div>
-  
+
+    
 {% endblock content %}
