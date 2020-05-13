@@ -1,5 +1,5 @@
 :root {
-  --back: #29a7a6;
+  --back: #17A2B8;
   /* --logo: #ff70a6; */
   --girl: #e64298;
   --boy: #2874dd;
@@ -27,7 +27,7 @@ nav {
   color: white;
   padding: 2px 12px;
   border-radius: 8px;
-  font-family: cursive;
+  /*font-family: cursive;*/
 }
 .logo:hover {
   color: white;
@@ -68,7 +68,7 @@ button i {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 img {
-  height: 130px !important;
+  height: 50px !important;
 }
 .card-header {
   font-size: 18px;
