@@ -19,7 +19,7 @@
     <div class="container m-3">
       <h5 class="text-center my-3 font-weight-light">Date added: &nbsp; {{contact.date_added}}</h5>
       <p class="text-center text-light">
-        <a class="btn btn-info px-5">
+        <a href="{% url 'update' contact.id %}" class="btn btn-info px-5">
           <i class="far fa-edit"></i>&nbsp; Update
         </a>
         &nbsp;&nbsp;&nbsp;
@@ -28,6 +28,7 @@
         </a>
       </p>
     </div>
+    <p><a class="btn btn-primary" href="{% url 'home' %}">Back &larr;</a></p>
   </div>
   <!-- Main Section ends-->
 {% endblock content %} 
