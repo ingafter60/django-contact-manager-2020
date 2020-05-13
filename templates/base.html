@@ -45,6 +45,7 @@
         <a href="{% url 'logout' %}" class="mr-g text-white">
           <i class="fas fa-sign-in-alt"></i>&nbsp; Log out
         </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="{% url 'create' %}" class="mr-g text-white">
           <i class="fas fa-plus"></i>&nbsp; Add Contact
         </a>    
@@ -65,6 +66,7 @@
           type="search"
           placeholder="Find contacts..."
           name="search_term"
+          value={{search_term}}
         />
       </form>
     </nav>

@@ -4,6 +4,8 @@ from .models import Contact
 from django.db.models import Q
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 # def home(request):
@@ -20,16 +22,19 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 # Class based-views
-class HomePageView(ListView):
+class HomePageView(LoginRequiredMixin, ListView):
 	template_name = 'index.html'
 	model 		  = Contact
 	context_object_name = 'contacts'
 
-class ContactDetailView(DetailView):
+
+class ContactDetailView(LoginRequiredMixin, DetailView):
 	template_name = 'detail.html'
 	model 		  = Contact
 	context_object_name = 'contact'
 
+
+@login_required
 def search(request):
 	if request.GET:
 		search_term = request.GET['search_term']
@@ -49,7 +54,8 @@ def search(request):
 	else:
 		return redirect('home')	
 
-class ContactCreateView(CreateView):
+
+class ContactCreateView(LoginRequiredMixin, CreateView):
 	# use Contact model and store its value in 'model'
 	model = Contact 
 	# template name to render the form to create contact object
@@ -60,7 +66,7 @@ class ContactCreateView(CreateView):
 	success_url = '/'
 
 
-class ContactUpdateView(UpdateView):
+class ContactUpdateView(LoginRequiredMixin, UpdateView):
 	# use Contact model and store its value in 'model'
 	model = Contact 
 	# template name to render the form to create contact object
@@ -74,7 +80,7 @@ class ContactUpdateView(UpdateView):
 		return redirect('detail', instance.pk)
 
 
-class ContactDeleteView(DeleteView):
+class ContactDeleteView(LoginRequiredMixin, DeleteView):
 	model = Contact 
 	template_name = 'delete.html'
 	success_url = '/'
@@ -83,4 +89,4 @@ class ContactDeleteView(DeleteView):
 class SignUpView(CreateView):
 	form_class = UserCreationForm
 	template_name = 'registration/signup.html'
-	success_url = 'home'
+	success_url = '/'
